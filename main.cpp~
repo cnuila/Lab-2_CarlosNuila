@@ -121,7 +121,7 @@ void Ejercicio1_2(string palabra){
     int suma = 0;
     for(int i = 0; i < size; i++){
         if (i + salto < size){
-            if (numero[i] == numero[
+            if (numero[i] == numero[];
         }
     }
 }

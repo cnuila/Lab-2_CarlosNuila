@@ -121,9 +121,15 @@ void Ejercicio1_2(string palabra){
     int suma = 0;
     for(int i = 0; i < size; i++){
         if (i + salto < size){
-            if (numero[i] == numero[];
+            if (numero[i] == numero[i + salto])
+                suma+=numero[i];
+        } else {
+            int nuevaposicion = size - i;
+            if (numero[i] == numero[nuevaposicion])
+                suma+= numero[i];
         }
     }
+    cout << "La suma es " << suma <<endl;
 }
 
 
