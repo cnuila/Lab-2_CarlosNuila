@@ -36,16 +36,17 @@ int main(){
                     case 1:
                         {
                             string palabra = "";
-                            while (palabra.length() == 0 || (palabra.length() % 2 != 0)){
-                                //esNumero = true;
+                            bool esLetra = false;
+                            while ((palabra.length() == 0 || (palabra.length() % 2 != 0)) && !esLetra){
                                 cout << "Ingrese el captcha: ";
                                 cin >> palabra;
-                                /*for (int i = 0; i < palabra.length(); i++){
+                                esLetra = true;
+                                for (int i = 0; i < palabra.length(); i++){
                                     if (!isdigit(palabra.at(i))){
-                                        esNumero = false;
+                                        esLetra = false;
                                         i = palabra.length();
                                     }
-                                }*/
+                                }
                             }
                             Ejercicio1_1(palabra);
                             break;
@@ -53,16 +54,17 @@ int main(){
                     case 2:
                         {
                             string palabra = "";
-                            while (palabra.length() == 0 || (palabra.length() % 2 != 0)){
-                                //esNumero = true;
+                            bool esLetra = false;
+                            while ((palabra.length() == 0 || (palabra.length() % 2 != 0)) && !esLetra){
                                 cout << "Ingrese el captcha: ";
                                 cin >> palabra;
-                                /*for (int i = 0; i < palabra.length(); i++){
+                                esLetra = true;
+                                for (int i = 0; i < palabra.length(); i++){
                                     if (!isdigit(palabra.at(i))){
-                                        esNumero = false;
+                                        esLetra = false;
                                         i = palabra.length();
                                     }
-                                }*/
+                                }
                             }
                             Ejercicio1_2(palabra);
                             break;
@@ -122,15 +124,19 @@ void Ejercicio1_2(string palabra){
     }
     int suma = 0;
     for(int i = 0; i < size; i++){
-        if (i + salto < size){
+        if ((i + salto) < size){
             if (numero[i] == numero[i + salto])
                 suma+=numero[i];
         } else {
-            int nuevaposicion = size - i;
+            int nuevaposicion = (i+salto)-size;
             if (numero[i] == numero[nuevaposicion])
                 suma+= numero[i];
         }
     }
+    /*
+    for (int i = 0; i < size; i++){
+        cout << "temp[" << i << "]= "<< numero[i] <<endl;
+    }*/
     cout << "La suma es " << suma <<endl;
 }
 
