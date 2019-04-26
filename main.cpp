@@ -133,7 +133,7 @@ void Ejercicio1_2(string palabra){
                 suma+= numero[i];
         }
     }
-    cout << "La suma es " << suma <<endl;
+    //cout << "La suma es " << suma <<endl;
 }
 
 
