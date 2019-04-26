@@ -1,10 +1,12 @@
 #include<iostream>
-using std::cin;
-using std::cout;
-using std::endl;
 #include<string>
+#include <stdlib.h>
+
+using namespace std;
 
 void  Ejercicio2(int numero);
+void Ejercicio1_1(string palabra);
+void Ejercicio1_2(string palabra);
 
 int main(){
     char respuesta = 'S';
@@ -22,7 +24,50 @@ int main(){
     switch (opcion){
         case 1:
             {
-                
+                int inciso = 0;
+                while (inciso <= 0){
+                    cout << "1)Inciso 1" <<endl
+                        << "2)Inciso 2" <<endl
+                        << "3)Salir" <<endl
+                        <<"Ingrese su opcion: ";
+                    cin >> inciso;
+                }
+                switch (inciso){
+                    case 1:
+                        {
+                            string palabra = "";
+                            while (palabra.length() == 0 || (palabra.length() % 2 != 0)){
+                                //esNumero = true;
+                                cout << "Ingrese el captcha: ";
+                                cin >> palabra;
+                                /*for (int i = 0; i < palabra.length(); i++){
+                                    if (!isdigit(palabra.at(i))){
+                                        esNumero = false;
+                                        i = palabra.length();
+                                    }
+                                }*/
+                            }
+                            Ejercicio1_1(palabra);
+                            break;
+                        }
+                    case 2:
+                        {
+                            string palabra = "";
+                            while (palabra.length() == 0 || (palabra.length() % 2 != 0)){
+                                //esNumero = true;
+                                cout << "Ingrese el captcha: ";
+                                cin >> palabra;
+                                /*for (int i = 0; i < palabra.length(); i++){
+                                    if (!isdigit(palabra.at(i))){
+                                        esNumero = false;
+                                        i = palabra.length();
+                                    }
+                                }*/
+                            }
+                            Ejercicio1_2(palabra);
+                            break;
+                        }
+                }
                 break;
             }
         case 2:
@@ -33,12 +78,52 @@ int main(){
                     cin >> numero;
                     Ejercicio2(numero);
                 }
+                break;
             }
     }
     cout << "¿Desea volver a hacerlo[s/n]?: ";
     cin >>  respuesta;
     }
     return 0;
+}
+
+
+void Ejercicio1_1(string palabra){
+    int size = palabra.length();
+    int numero[size];
+    for(int i = 0; i < size; i++)
+        numero[i] = 0;
+    for(int i = 0; i < size; i++){
+        char num =  palabra.at(i);
+        numero[i] = num - '0';
+    }
+    int suma = 0;
+    for (int i = 0; i < size; i++){
+        if (i < size - 1){
+            if (numero[i] == numero[i+1])
+                suma+=numero[i];
+        } else {
+            if (numero[size - 1] == numero[0])
+                suma+=numero[i];
+        }
+    }
+    cout << "La suma es " << suma<<endl;
+}
+
+void Ejercicio1_2(string palabra){
+    int salto = palabra.length()/2;
+    for(int i = 0; i < size; i++)
+        numero[i] = 0;
+    for(int i = 0; i < size; i++){
+        char num =  palabra.at(i);
+        numero[i] = num - '0';
+    }
+    int suma = 0;
+    for(int i = 0; i < size; i++){
+        if (i + salto < size){
+            if (numero[i] == numero[];
+        }
+    }
 }
 
 
