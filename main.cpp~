@@ -53,6 +53,7 @@ int main(){
                         }
                     case 2:
                         {
+                            string palabra = "";
                             bool esLetra = false;
                             while ((palabra.length() == 0 || (palabra.length() % 2 != 0)) && !esLetra){
                                 cout << "Ingrese el captcha: ";
