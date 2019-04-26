@@ -112,6 +112,8 @@ void Ejercicio1_1(string palabra){
 
 void Ejercicio1_2(string palabra){
     int salto = palabra.length()/2;
+    int size = palabra.length;
+    int numero[size];
     for(int i = 0; i < size; i++)
         numero[i] = 0;
     for(int i = 0; i < size; i++){
